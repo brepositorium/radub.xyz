@@ -1,41 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-</head>
-<body class="flex flex-col bg-black items-center">
-    {% include header.html %}
-    {{ content }}
-</body>
-<script>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+    <link rel="icon" type="image/png" href="{{ '/assets/images/logo.png' | relative_url }}">
+
+  </head>
+
+  <body class="flex flex-col bg-black items-center">
+    {% include header.html %} {{ content }}
+  </body>
+
+  <script>
     function showTab(tabName) {
-        var tabs = document.querySelectorAll('#tab-content > div');
-        var tabButtons = document.querySelectorAll('.tab');
+      var tabs = document.querySelectorAll("#tab-content > div");
+      var tabButtons = document.querySelectorAll(".tab");
 
-        tabs.forEach(tab => {
-            tab.classList.remove('active');
-            tab.style.display = 'none';
-        });
-    
-        tabButtons.forEach(button => {
-            button.classList.remove('bg-gradient-to-t', 'from-stone-600', 'shadow-md', 'font-bold');
-            button.querySelector('.tab-indicator').style.transform = 'scaleX(0)';
-        });
+      tabs.forEach((tab) => {
+        tab.classList.remove("active");
+        tab.style.display = "none";
+      });
 
-        setTimeout(() => {
+      tabButtons.forEach((button) => {
+        button.classList.remove(
+          "bg-gradient-to-t",
+          "from-stone-600",
+          "shadow-md",
+          "font-bold",
+        );
+        button.querySelector(".tab-indicator").style.transform = "scaleX(0)";
+      });
+
+      setTimeout(() => {
         const activeTab = document.getElementById(tabName);
-        activeTab.classList.add('active');
-        activeTab.style.display = 'block'; 
-                
-        const activeButton = document.querySelector('.tab[onclick="showTab(\'' + tabName + '\')"]');
-        activeButton.classList.add('active', 'font-bold');
-        const indicator = activeButton.querySelector('.tab-indicator');
-        indicator.style.transform = 'scaleX(1)';
-    }, 300);
+        activeTab.classList.add("active");
+        activeTab.style.display = "block";
+
+        const activeButton = document.querySelector(
+          ".tab[onclick=\"showTab('" + tabName + "')\"]",
+        );
+        activeButton.classList.add("active", "font-bold");
+        const indicator = activeButton.querySelector(".tab-indicator");
+        indicator.style.transform = "scaleX(1)";
+      }, 300);
     }
-    </script>
-    
+  </script>
+
 </html>
