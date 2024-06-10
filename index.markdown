@@ -4,9 +4,9 @@ layout: default
 
 <div class="bio text-lg my-8 px-4 w-full md:w-9/12 xl:w-9/12 text-white">
     <div class="flex justify-center gap-2 mb-4">
-        <a href="https://twitter.com/radubxyz"><img src="/assets/images/x-icon.svg"/></a>
-        <a href="https://github.com/brepositorium"><img src="/assets/images/github-icon.svg"/></a>
-        <a href="https://www.linkedin.com/in/radumihaibulimac/"><img src="/assets/images/linkedin-icon.svg"/></a>
+        <a href="https://twitter.com/radubxyz" target="_blank"><img src="/assets/images/x-icon.svg"/></a>
+        <a href="https://github.com/brepositorium" target="_blank"><img src="/assets/images/github-icon.svg"/></a>
+        <a href="https://www.linkedin.com/in/radumihaibulimac/" target="_blank"><img src="/assets/images/linkedin-icon.svg"/></a>
     </div>
         <p class="font-poppins">Full-stack web developer who loves building user-friendly web apps using a variety of tools. My adventure started in the world of Java and Spring, but that was just the beginning. Since then, I've gotten my hands dirty with many other tools from React and Angular to NextJS and Firebase. Lately, I've been diving into Blockchain and AI. I love engineering as a whole and building stuff is what drives me.</p>
 </div>
@@ -105,8 +105,8 @@ layout: default
     </div>
     <div id="projects" class='hidden'>
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-4">
-        {% for project in site.data.projects %}
-            {% include card.html title=project.title image=project.image alt=project.alt description=project.description link=project.link %}
+        {% for project in site.posts %}
+            {% include card.html title=project.title date=project.date author=project.author description=project.description link=project.url %}
         {% endfor %}
         </div>
     </div>

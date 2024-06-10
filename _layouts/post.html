@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ site.title }}</title>
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+        <link rel="icon" type="image/png" href="{{ '/assets/images/logo.png' | relative_url }}">
+    </head>
+    
+    <body class="bg-black text-white">
+        <div class="flex justify-center">{% include header.html %}</a></div>
+
+        <div class="mt-8">
+            <header class="flex flex-col items-center px-16 md:px-32 lg:px-64">
+                <h1 class=" font-bold text-3xl font-poppins">{{ page.title }}</h1>
+                <h2 class="mt-4 mb-4 font-medium text-lg font-poppins">{{ page.description }}</h2>
+            </header>
+            <section class="mt-4 px-8 md:px-24 lg:px-40">
+                {{ content }}
+            </section>
+        </div>
+    </body>
+</html>
